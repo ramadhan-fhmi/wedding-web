@@ -94,7 +94,7 @@ var x = setInterval(function () {
 
 //nama sambutan
 const urlParams = new URLSearchParams(window.location.search)
-const panggilan = urlParams.get('p')
+const panggilan = urlParams.get('to')
 const nama = urlParams.get('n')
 const namaSambutan = document.querySelector('#nama-sambutan')
 namaSambutan.innerText = `${panggilan} ${nama},`
