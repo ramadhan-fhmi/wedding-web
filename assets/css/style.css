@@ -104,6 +104,18 @@ body.transition {
     left: 0;
 }
 
+.heading-door.center {
+    text-align: center;
+    display: none;
+}
+
+@media(max-width: 992px) {
+    .heading-door.center {
+       display: block;
+    }
+}
+
+
 .heading-door.right {
     right: 0;
 }
@@ -478,6 +490,8 @@ body.transition {
 
     ul.timeline>li>.timeline-panel {
         float: right;
+        padding: 10px;
+        text-align: center;
     }
 
     ul.timeline>li>.timeline-panel::before {
