@@ -44,11 +44,10 @@
     div.innerHTML = `<strong>${data.name}</strong><br>${data.message}`;
     document.getElementById("comments").prepend(div);
   });
-  
+
   window.submitComment = submitComment;
 
 AOS.init()
-
 
 //music
 var tempmusic = ''
