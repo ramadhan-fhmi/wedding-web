@@ -1,65 +1,47 @@
 
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyAPBqH3Nd_KkmwQh5rjCSWaZskbbhpTEKQ",
+    authDomain: "wedding-fahmi.firebaseapp.com",
+    databaseURL: "https://wedding-fahmi-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "wedding-fahmi",
+    storageBucket: "wedding-fahmi.firebasestorage.app",
+    messagingSenderId: "461134320710",
+    appId: "1:461134320710:web:e643c43ead13088b72e647",
+    measurementId: "G-P6ZFJK0864"
+  };
+  // Inisialisasi Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Kirim komentar
+  function submitComment() {
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    if (name && message) {
+      db.ref("comments").push({
+        name,
+        message,
+        time: Date.now()
+      });
+
+      // Reset form
+      document.getElementById("name").value = "";
+      document.getElementById("message").value = "";
+    } else {
+      alert("Harap isi nama dan ucapan.");
+    }
+  }
+
   // Tampilkan komentar secara real-time
-//   db.ref("comments").on("child_added", function(snapshot) {
-//     const data = snapshot.val();
-//     const div = document.createElement("div");
-//     div.classList.add("comment");
-//     div.innerHTML = `<strong>${data.name}</strong><br>${data.message}`;
-//     document.getElementById("comments").prepend(div);
-//   });
-
-  // Import Firebase SDK
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
-
-// Konfigurasi Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyAPBqH3Nd_KkmwQh5rjCSWaZskbbhpTEKQ",
-  authDomain: "wedding-fahmi.firebaseapp.com",
-  databaseURL: "https://wedding-fahmi-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "wedding-fahmi",
-  storageBucket: "wedding-fahmi.firebasestorage.app",
-  messagingSenderId: "461134320710",
-  appId: "1:461134320710:web:e643c43ead13088b72e647"
-};
-
-// Inisialisasi Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Event untuk kirim komentar
-document.getElementById("kirim-komentar").addEventListener("click", () => {
-  const nama = document.getElementById("nama").value;
-  const pesan = document.getElementById("pesan").value;
-
-  if (nama && pesan) {
-    push(ref(db, "komentar"), {
-      nama,
-      pesan,
-      waktu: Date.now()
-    });
-
-    document.getElementById("nama").value = "";
-    document.getElementById("pesan").value = "";
-  }
-});
-
-// Tampilkan komentar
-const komentarList = document.getElementById("daftar-komentar");
-
-onValue(ref(db, "komentar"), (snapshot) => {
-  const data = snapshot.val();
-  komentarList.innerHTML = "";
-
-  if (data) {
-    Object.values(data).reverse().forEach(item => {
-      const el = document.createElement("div");
-      el.innerHTML = `<strong>${item.nama}</strong><br>${item.pesan}<hr>`;
-      komentarList.appendChild(el);
-    });
-  }
-});
+  db.ref("comments").on("child_added", function(snapshot) {
+    const data = snapshot.val();
+    const div = document.createElement("div");
+    div.classList.add("comment");
+    div.innerHTML = `<strong>${data.name}</strong><br>${data.message}`;
+    document.getElementById("comments").prepend(div);
+  });
 
 AOS.init()
 
