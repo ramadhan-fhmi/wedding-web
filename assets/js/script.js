@@ -34,6 +34,8 @@
     }
   }
 
+  
+
   // Tampilkan komentar secara real-time
   db.ref("comments").on("child_added", function(snapshot) {
     const data = snapshot.val();
@@ -42,6 +44,8 @@
     div.innerHTML = `<strong>${data.name}</strong><br>${data.message}`;
     document.getElementById("comments").prepend(div);
   });
+  
+  window.submitComment = submitComment;
 
 AOS.init()
 
