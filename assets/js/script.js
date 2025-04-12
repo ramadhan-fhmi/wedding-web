@@ -1,6 +1,4 @@
-
-
-  const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAPBqH3Nd_KkmwQh5rjCSWaZskbbhpTEKQ",
     authDomain: "wedding-fahmi.firebaseapp.com",
     databaseURL: "https://wedding-fahmi-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -9,43 +7,102 @@
     messagingSenderId: "461134320710",
     appId: "1:461134320710:web:e643c43ead13088b72e647",
     measurementId: "G-P6ZFJK0864"
-  };
-  // Inisialisasi Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+};
 
-  // Kirim komentar
-  function submitComment() {
-    const name = document.getElementById("name").value;
-    const message = document.getElementById("message").value;
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-    if (name && message) {
-      db.ref("comments").push({
-        name,
-        message,
-        time: Date.now()
-      });
+let total = 0, hadir = 0, tidakHadir = 0;
+const commentsPerPage = 5;
+let comments = [];
+let currentPage = 1;
 
-      // Reset form
-      document.getElementById("name").value = "";
-      document.getElementById("message").value = "";
-    } else {
-      alert("Harap isi nama dan ucapan.");
+window.onload = function() {
+    db.ref("komentar").on("value", (snapshot) => {
+        comments = [];
+        snapshot.forEach((child) => {
+            comments.unshift(child.val());
+        });
+        total = comments.length;
+        hadir = comments.filter(c => c.status === "Hadir").length;
+        tidakHadir = comments.filter(c => c.status === "Tidak Hadir").length;
+        updateStats();
+        renderComments();
+    });
+};
+
+function kirimKomentar() {
+    const nama = document.getElementById('nama').value.trim();
+    const ucapan = document.getElementById('ucapan').value.trim();
+    const status = document.getElementById('status').value;
+
+    if (!nama || !status) {
+        alert("Nama dan status kehadiran wajib diisi.");
+        return;
     }
-  }
 
-  
+    const waktu = new Date().toLocaleString("id-ID");
+    const newComment = { nama, ucapan, status, waktu };
 
-  // Tampilkan komentar secara real-time
-  db.ref("comments").on("child_added", function(snapshot) {
-    const data = snapshot.val();
-    const div = document.createElement("div");
-    div.classList.add("comment");
-    div.innerHTML = `<strong>${data.name}</strong><br>${data.message}`;
-    document.getElementById("comments").prepend(div);
-  });
+    db.ref("komentar").push(newComment);
 
-  window.submitComment = submitComment;
+    document.getElementById('nama').value = '';
+    document.getElementById('ucapan').value = '';
+    document.getElementById('status').value = '';
+}
+
+function updateStats() {
+    document.getElementById('total-comments').textContent = total;
+    document.getElementById('count-hadir').textContent = hadir;
+    document.getElementById('count-tidak-hadir').textContent = tidakHadir;
+}
+
+function renderComments() {
+    const start = (currentPage - 1) * commentsPerPage;
+    const end = start + commentsPerPage;
+    const visibleComments = comments.slice(start, end);
+
+    const container = document.getElementById('list-komentar');
+    container.innerHTML = '';
+    visibleComments.forEach(comment => {
+        const badgeClass = comment.status === 'Hadir' ? 'hadir' : 'tidak-hadir';
+        container.innerHTML += `
+            <div class="comment">
+                <strong>${comment.nama}</strong>
+                <span class="badge ${badgeClass}">${comment.status}</span><br>
+                ${comment.ucapan ? comment.ucapan + '<br>' : ''}
+                <small>${comment.waktu}</small>
+            </div>
+        `;
+    });
+    renderPagination();
+}
+
+function renderPagination() {
+    const totalPages = Math.ceil(comments.length / commentsPerPage);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    if (totalPages <= 1) return;
+
+    if (currentPage > 1) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})">← Prev</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `<button onclick="changePage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+    }
+
+    if (currentPage < totalPages) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})">Next →</button>`;
+    }
+}
+
+function changePage(page) {
+    currentPage = page;
+    renderComments();
+}
+
 
 AOS.init()
 
