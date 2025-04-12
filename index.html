@@ -107,8 +107,6 @@
                 </a>
             </li>
         </ul>
-
-
         <section id="hero-section" class="d-flex align-items-center">
             <img src="assets/img/Pink-daun.gif" alt="sparkle-gif" class="sparkle">
             <div class="container text-center">
@@ -147,7 +145,7 @@
         <section id="pembuka-section" class="pembuka-section section-bg py-5">
             <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="section-title text-center">
                             <h1 class="text-pink huruf-sambung fw-bold">Assalamu'alaikum</h1>
                             <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
@@ -177,9 +175,9 @@
                             <div class="col rounded" data-aos="fade-right" data-aos-easing="linear"
                                 data-aos-duration="1500">
                                 <div class="p-2 pt-3 text-center">
-                                    <h1 class="text-center huruf-sambung">Fahmi Ramadhan S.Kom</h1>
+                                    <h1 class="text-center huruf-sambung" style="font-weight: bold;">Fahmi Ramadhan S.Kom</h1>
                                     <p>Anak pertama dari pasangan:</p>
-                                    <p>Bpk. Marwan Zein & Ibu Umyati</p>
+                                    <p>Bpk. Marwan & Ibu Umyati</p>
                                 </div>
                             </div>
                             <div class="col-sm-1 my-auto" data-aos="fade-down" data-aos-easing="linear"
@@ -189,7 +187,7 @@
                             <div class="col rounded" data-aos="fade-left" data-aos-easing="linear"
                                 data-aos-duration="1500">
                                 <div class="p-2 pt-3 text-center">
-                                    <h1 class="text-center huruf-sambung">Syamia Az-zahra</h1>
+                                    <h1 class="text-center huruf-sambung" style="font-weight: bold;">Syamia Az-zahra</h1>
                                     <p>Anak ketiga dari pasangan:</p>
                                     <p>Bpk. Raden Abdul Mutolip S.E & Ibu Fauziah S.E</p>
                                 </div>
@@ -340,7 +338,6 @@
             </div>
         </section>
 
-
         <section id="gallery-section" class="gallery-section py-5 section-bg">
             <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="section-title">
@@ -400,9 +397,8 @@
                 </div>
         </section>
 
-
         <!--Gift Section-->
-        <section id="gift-section" class="gift-section py-5 section-bg">
+        <section id="gift-section" class="gift-section py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -418,6 +414,20 @@
                                     data-bs-toggle="collapse" data-bs-target="#collapseHadiah"><i
                                         class="fas fa-fw fa-gift"></i>Kirim Hadiah</button>
                                 <div class="collapse" id="collapseHadiah">
+                                    <div class="my-4 mx-auto position-relative credit-card-mandiri">
+                                        <img src="assets/img/card/mandiri-logo.png" alt="Logo Mandiri"
+                                            class="card-logo">
+                                        <div class="card-container">
+                                            <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                                            <div class="card-number">1200011479271</div>
+                                        </div>
+                                        <div class="card-name mt-2">Raden Abdul Mutolip</div>
+                                        <a style="cursor: pointer;" onclick="copyText(this)"
+                                            class="copy-button btn btn-light mt-3">
+                                            <i class="fas fa-fw fa-copy"></i>
+                                            Copy
+                                        </a>
+                                    </div>
                                     <div class="my-4 mx-auto position-relative credit-card-bca">
                                         <img src="assets/img/card/bca-logo-white.png" alt="Logo BCA" class="card-logo">
                                         <div class="card-container">
@@ -445,20 +455,7 @@
                                             Copy
                                         </a>
                                     </div>
-                                    <div class="my-4 mx-auto position-relative credit-card-mandiri">
-                                        <img src="assets/img/card/mandiri-logo.png" alt="Logo Mandiri"
-                                            class="card-logo">
-                                        <div class="card-container">
-                                            <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
-                                            <div class="card-number">1200011479271</div>
-                                        </div>
-                                        <div class="card-name mt-2">Raden Abdul Mutolip</div>
-                                        <a style="cursor: pointer;" onclick="copyText(this)"
-                                            class="copy-button btn btn-light mt-3">
-                                            <i class="fas fa-fw fa-copy"></i>
-                                            Copy
-                                        </a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -468,86 +465,43 @@
         </section>
 
         <!--RSVP section-->
-        <section id="rsvp-section" class="rsvp-section py-5">
+        <section id="rsvp-section" class="rsvp-section py-5 section-bg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title text-center">
-                            <h1 class="text-pink huruf-sambung fw-bold">Konfirmasi Kehadiran</h1>
-                            <p>Isi form dibawah ini untuk melakukan konfirmasi kehadiran Anda.</p>
+                            <h1 class="text-pink huruf-sambung fw-bold">RSVP</h1>
+                            <p>Isi form dibawah ini untuk melakukan konfirmasi kehadiran dan ucapan anda.</p>
+                            <p style="text-align:center">Silakan tinggalkan ucapan dan doa 💌</p>
                         </div>
-                        <p style="text-align:center">Silakan tinggalkan ucapan dan doa 💌</p>
-
-                        <div>
-                            <input id="name" placeholder="Nama kamu..." />
-                            <textarea id="message" placeholder="Tulis ucapan di sini..."></textarea>
-                            <button onclick="submitComment()">Kirim Komentar</button>
+                        
+                        <div class="container">
+                            <h3><center><span id="total-comments">0</span> Ucapan</center></h3>
+                            <div class="status">
+                                <div><span id="count-hadir">0</span><div>Hadir</div></div>
+                                <div><span id="count-tidak-hadir">0</span><div>Tidak Hadir</div></div>
+                            </div>
+                            <input type="text" id="nama" placeholder="Nama">
+                            <textarea id="ucapan" placeholder="Ucapan"></textarea>
+                            <select id="status">
+                                <option value="">-- Pilih Kehadiran --</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Tidak Hadir">Tidak Hadir</option>
+                            </select>
+                            <button onclick="kirimKomentar()">Kirim</button>
+                    
+                            <div id="list-komentar"></div>
+                            <div class="pagination" id="pagination"></div>
                         </div>
-
-                        <h2>Komentar</h2>
-                        <div id="comments"></div>
-
-
-                        <form
-                            action="https://script.google.com/macros/s/AKfycbwcbJsLEHsVJLUwXm5_NW2TWeqMHxQfPApGdm4xpK-t-9j25O0-785W0ertgb_9Gzsy/exec"
-                            method="POST" id="rsvp-form"
-                            class="row row-cols-md-auto g-3 align-items-center justify-content-center">
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label for="nama">Nama</label>
-                                    <input type="text" id="nama" name="nama" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label for="status">Status</label>
-                                    <select name="status" id="status" class="form-select" required>
-                                        <option value="0">--- Pilih Salah Satu ---</option>
-                                        <option value="Hadir">Hadir</option>
-                                        <option value="Tidak Hadir">Tidak Hadir</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <div class="mt-2 ">
-                                    <button type="submit" class="btn btn-kirim"><i class="fas fa-fw fa-paper-plane"></i>
-                                        Kirim</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="row mt-5">
-                            <div class="col-lg-12">
-                                <div id="disqus_thread"></div>
-                                <script>
-                                    /**
-                                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                                    /*
-                                    var disqus_config = function () {
-                                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                                    };
-                                    */
-                                    (function () { // DON'T EDIT BELOW THIS LINE
-                                        var d = document, s = d.createElement('script');
-                                        s.src = 'https://wedding-syamia-fahmi.disqus.com/embed.js';
-                                        s.setAttribute('data-timestamp', +new Date());
-                                        (d.head || d.body).appendChild(s);
-                                    })();
-                                </script>
-                                <noscript>Please enable JavaScript to view the <a
-                                        href="https://disqus.com/?ref_noscript">comments powered by
-                                        Disqus.</a></noscript>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </section>
 
         <!--penutup section-->
-        <section id="penutup-section" class="penutup-section section-bg py-1">
-            <div class="container mb-4" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <section id="penutup-section" class="penutup-section py-1">
+            <div class="container mb-4" >
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title text-center">
@@ -555,7 +509,7 @@
                             <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i,
                                 berkenan
                                 hadir dan memberikan do'a restu kepada kami.</p>
-                            <h5 class="my-5">Kami yang berbahagia</h5>
+                            <p class="my-3">Kami yang berbahagia</p>
                             <h1 class="huruf-sambung">Fahmi & Syamia</h1>
                             <p class="text-pink text-center mb-5" class=" text-pink fw-bold"
                                 style="text-decoration: none; ">&copy;2025. Made with 🧡</p>
@@ -569,10 +523,6 @@
         </section>
 
     </div>
-
-    <!-- Firebase SDK v8 -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script> -->
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -592,19 +542,13 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
         async></script>
-
-   
-    <!-- <script type="module" src="assets/js/script.js"></script> -->
-
     <!--disquss-->
     <!-- <script id="dsq-count-scr" src="//wedding-syamia-fahmi.disqus.com/count.js" async></script> -->
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
     <!-- Script kamu -->
     <script src="assets/js/script.js?v=2"></script>
-    
 </body>
 
 </html>
