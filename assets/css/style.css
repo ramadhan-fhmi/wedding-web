@@ -118,11 +118,11 @@ body.transition {
         display: block;
     }
 
-    .heading-door.left{
+    .heading-door.left {
         margin-left: 40px;
     }
 
-    .heading-door.right{
+    .heading-door.right {
         margin-right: 40px;
     }
 }
@@ -132,11 +132,11 @@ body.transition {
         display: block;
     }
 
-    .heading-door.left{
+    .heading-door.left {
         margin-left: 25px;
     }
 
-    .heading-door.right{
+    .heading-door.right {
         margin-right: 25px;
     }
 }
@@ -277,11 +277,9 @@ body.transition {
 }
 
 .sparkle {
-    position: fixed;
-   
+    position: absolute;
     width: 100%;
     height: 100%;
-    pointer-events: none;
 }
 
 .text-pink {
@@ -382,7 +380,7 @@ body.transition {
     left: 50%;
     margin-left: 0;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 .timeline>li {
@@ -521,7 +519,7 @@ body.transition {
     ul.timeline:before {
         left: 90px;
         margin-top: 100px;
-        margin-bottom: 230px;
+        margin-bottom: 250px;
     }
 
     ul.timeline>li>.timeline-panel {
@@ -561,11 +559,12 @@ body.transition {
         right: auto;
     }
 }
+
 @media (max-width: 375px) {
     ul.timeline:before {
         left: 90px;
         margin-top: 100px;
-        margin-bottom: 350px;
+        margin-bottom: 400px;
     }
 
     ul.timeline>li>.timeline-panel {
@@ -686,16 +685,16 @@ body.transition {
     color: var(--pink-hover);
 }
 
-#penutup-section {
+/* #penutup-section {
     position: relative;
     height: 50vh;
     color: var(--black);
     display: flex;
     align-items: center;
     margin-bottom: 0;
-}
+} */
 
-#penutup-section::before {
+/* #penutup-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -705,13 +704,13 @@ body.transition {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 1)100%, url('../img/FotoPengantin.jpg'));
     background-position: center;
     background-size: cover;
-}
+} */
 
-@media(max-width: 480px) {
+/* @media(max-width: 480px) {
     #penutup-section {
         margin-top: 5px;
     }
-}
+} */
 
 @media(max-width: 768px) {
     .heading-door {
@@ -843,4 +842,192 @@ button {
 .pagination .active {
     color: #005a96;
     text-decoration: underline;
+}
+
+/* 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.gallery a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* 
+.gallery a:hover {
+    transform: scale(1.05);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery a {
+    display: inline-block;
+    max-width: 200px;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+} */
+
+.foto-nama{
+    margin-left: 500px;
+    width: 300px;
+    overflow: hidden;
+    border: 5px solid #2C3E50;
+    border-radius: 150px 150px 0 0; 
+    max-width: 400px;
+    max-height: 1000px;
+}
+
+.card {
+    width: 300px;
+    overflow: hidden;
+    border: 5px solid #2C3E50;
+    border-radius: 150px 150px 0 0; 
+    margin-left: 275px;
+    max-width: 400px;
+    max-height: 1000px;/* Atas melengkung, bawah kotak */
+  }
+  
+  .rounded-top {
+    width: 100%;
+    display: block;
+    border-radius: 150px 150px 0 0; /* radius atas saja */
+  }
+  
+
+.portrait-left {
+    padding-right: 3px;
+    max-width: 400px;
+    max-height: 1000px;
+    margin-left: 260px;
+    
+}
+
+.portrait-right {
+    padding-left: 3px;
+    max-width: 400px;
+    max-height: 1000px;
+}
+
+.landscape-left {
+    padding-right: 3px;
+    max-width: 400px;
+    /* max-height: 200px; */
+    margin-left: 260px;
+}
+
+.landscape-right {
+    max-width: 400px;
+    /* max-height: 200px; */
+    padding-left: 3px;
+}
+
+@media(max-width: 768px) {
+    .portrait-left {
+        margin-left: 0px;
+    }
+    .landscape-left {
+        margin-left: 0px;
+    }
+    .card{
+        margin-left: 100px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+    .foto-nama{
+        margin-left: 100px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+}
+
+@media(max-width: 320px) {
+    .card{
+        margin-left: 50px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+    .foto-nama{
+        margin-left: 20px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+}
+@media(max-width: 375px) {
+    .card{
+        margin-left: 75px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+    .foto-nama{
+        margin-left: 75px;
+        max-width: 200px;
+        max-height: 800px;
+    }
+}
+
+
+.masonry-item :hover {
+    transform: scale(1.02);
+  }
+
+/* Posisi tombol Next dan Prev di pinggir */
+.lg-next,
+.lg-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lg-prev {
+    left: 20px;
+}
+
+.lg-next {
+    right: 20px;
+}
+
+.lg-toolbar,
+.lg-prev,
+.lg-next,
+.lg-close {
+    display: block !important;
+    opacity: 1 !important;
 }

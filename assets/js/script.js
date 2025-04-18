@@ -204,30 +204,6 @@ const nama = urlParams.get('n')
 const namaSambutan = document.querySelector('#nama-sambutan')
 namaSambutan.innerText = `${panggilan} ${nama},`
 
-/*
-function copyText(el)
-{
-    var content = jQuery(el).siblings('div.card-container').find('div.card-number').text().trim()
-
-    var temp = document.createElement("textarea")
-
-    document.body.appendChild(temp)
-
-    temp.value = content.replace(/\s+/g, '')
-    temp.select()
-
-    document.execCommand("Copy")
-
-    document.body.removeChild(temp)
-
-    jQuery(el).text('Berhasil di copy ke papan klip')
-
-    setTimeout(function (){
-        jQuery(el).html(`<i class="fas fa-regular fa-copy"></i> Copy`)
-    })
-
-}
-*/
 
 function copyText(el) {
     var content = jQuery(el).siblings('div.card-container').find('div.card-number').text().trim();
@@ -296,6 +272,38 @@ window.addEventListener("load", function() {
                 input.disabled = false
             })
         })
-
     })
 })
+
+
+// lightGallery(document.getElementById('wedding-gallery'), {
+//     plugins: [lgThumbnail, lgZoom],
+//     thumbnail: true,
+//     zoom: true,
+//     download: false, 
+//     controls: true, // pastikan tombol navigasi muncul
+//     hideBarsDelay: 3000, // opsional: delay sembunyi kontrol
+//     speed: 300
+// });
+
+lightGallery(document.getElementById('lightgallery'), {
+      plugins: [lgZoom, lgThumbnail],
+      speed: 300,
+      download: false // Hilangkan tombol download
+    });
+
+    document.querySelectorAll(".masonry-item img").forEach((img) => {
+        const handleImage = () => {
+          const parent = img.closest(".masonry-item");
+          if (img.naturalWidth > img.naturalHeight) {
+            parent.classList.add("landscape");
+          }
+        };
+      
+        if (img.complete) {
+          handleImage(); // gambar sudah dimuat, jalankan langsung
+        } else {
+          img.onload = handleImage; // gambar belum dimuat, tunggu dulu
+        }
+      });
+      
