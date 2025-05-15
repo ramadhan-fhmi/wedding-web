@@ -173,7 +173,7 @@ function toggleMusic(event) {
 }
 
 //countdown wedding
-var countdownDate = new Date("Apr 26, 2025 10:00:00").getTime()
+var countdownDate = new Date("Jun 14, 2025 10:00:00").getTime()
 
 var x = setInterval(function () {
     var now = new Date().getTime()
