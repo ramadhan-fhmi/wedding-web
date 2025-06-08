@@ -59,7 +59,7 @@ body.transition {
 }
 
 .doors {
-    width: 350px;
+    width: 320px;
     height: 500px;
     position: relative;
     cursor: pointer;
@@ -100,6 +100,14 @@ body.transition {
     margin: auto;
 }
 
+.heading-door-notif {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    font-size: 30px;
+    margin: 20px auto 20px auto;
+}
+
 .heading-door.left {
     left: 0;
 }
@@ -119,28 +127,27 @@ body.transition {
     }
 
     .heading-door.left {
-        margin-left: 40px;
+        margin-left: 10px;
     }
 
     .heading-door.right {
-        margin-right: 40px;
+        margin-right: 10px;
     }
 }
 
-@media(max-width: 992px) {
+@media(max-width: 320px) {
     .heading-door.center {
         display: block;
     }
 
     .heading-door.left {
-        margin-left: 25px;
+        margin-left: 10px;
     }
 
     .heading-door.right {
-        margin-right: 25px;
+        margin-right: 10px;
     }
 }
-
 .img-fluid {
     width: 60%;
     height: 100%;
@@ -246,7 +253,7 @@ body.transition {
 #hero-section {
     width: 100%;
     height: 100vh;
-    background: url("../img/desti3.jpg") top left;
+    background: url("../img/dashboard-awall.jpeg") top left;
     /* background: url("../img/bg-taman.png") top left; */
     background-size: cover;
     position: relative;

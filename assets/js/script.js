@@ -13,12 +13,12 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 let total = 0, hadir = 0, tidakHadir = 0;
-const commentsPerPage = 5;
+const commentsPerPage = 10;
 let comments = [];
 let currentPage = 1;
 
 window.onload = function() {
-    db.ref("comments").on("value", (snapshot) => {
+    db.ref("komentar").on("value", (snapshot) => {
         comments = [];
         snapshot.forEach((child) => {
             comments.unshift(child.val());
@@ -44,7 +44,7 @@ function kirimKomentar() {
     const waktu = new Date().toLocaleString("id-ID");
     const newComment = { nama, ucapan, status, waktu };
 
-    db.ref("comments").push(newComment);
+    db.ref("komentar").push(newComment);
 
     document.getElementById('nama').value = '';
     document.getElementById('ucapan').value = '';
@@ -173,7 +173,7 @@ function toggleMusic(event) {
 }
 
 //countdown wedding
-var countdownDate = new Date("May 31, 2025 10:00:00").getTime()
+var countdownDate = new Date("Jun 14, 2025 10:00:00").getTime()
 
 var x = setInterval(function () {
     var now = new Date().getTime()
