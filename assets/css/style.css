@@ -59,7 +59,7 @@ body.transition {
 }
 
 .doors {
-    width: 400px;
+    width: 320px;
     height: 500px;
     position: relative;
     cursor: pointer;
@@ -100,6 +100,14 @@ body.transition {
     margin: auto;
 }
 
+.heading-door-notif {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    font-size: 30px;
+    margin: 20px auto 20px auto;
+}
+
 .heading-door.left {
     left: 0;
 }
@@ -119,25 +127,25 @@ body.transition {
     }
 
     .heading-door.left {
-        margin-left: 40px;
+        margin-left: 10px;
     }
 
     .heading-door.right {
-        margin-right: 40px;
+        margin-right: 10px;
     }
 }
 
-@media(max-width: 992px) {
+@media(max-width: 320px) {
     .heading-door.center {
         display: block;
     }
 
     .heading-door.left {
-        margin-left: 25px;
+        margin-left: 10px;
     }
 
     .heading-door.right {
-        margin-right: 25px;
+        margin-right: 10px;
     }
 }
 
@@ -246,7 +254,7 @@ body.transition {
 #hero-section {
     width: 100%;
     height: 100vh;
-    background: url("../img/dashboard-awall.jpeg") top left;
+    background: url("../video.MP4") top left;
     /* background: url("../img/bg-taman.png") top left; */
     background-size: cover;
     position: relative;
@@ -257,6 +265,43 @@ body.transition {
 #hero-section .container {
     position: relative;
 }
+
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Atau 100% jika ingin sesuai parent */
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Biar video menyesuaikan ukuran tanpa distorsi */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Biar tidak bisa dipencet */
+  user-select: none; 
+  z-index: -2;   /* Tidak bisa diseleksi */
+}
+.video-background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(58, 57, 57, 0.7); /* Ubah alpha-nya untuk atur kegelapan */
+  z-index: -1;
+}
+.video-background .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20vh;
+}
+
 
 #hero-section .btn-get-started {
     text-transform: uppercase;

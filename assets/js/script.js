@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 let total = 0, hadir = 0, tidakHadir = 0;
-const commentsPerPage = 5;
+const commentsPerPage = 10;
 let comments = [];
 let currentPage = 1;
 
