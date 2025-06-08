@@ -254,8 +254,8 @@ body.transition {
 #hero-section {
     width: 100%;
     height: 100vh;
-    background: url("../video.MP4") top left;
-    /* background: url("../img/bg-taman.png") top left; */
+    /* background: url("../video.MP4") top left; */
+    background: url("../img/dashboard-awall.jpeg") top left;
     background-size: cover;
     position: relative;
     background-position: center;
