@@ -266,42 +266,6 @@ body.transition {
     position: relative;
 }
 
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Atau 100% jika ingin sesuai parent */
-  overflow: hidden;
-}
-
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Biar video menyesuaikan ukuran tanpa distorsi */
-  transform: translate(-50%, -50%);
-  pointer-events: none; /* Biar tidak bisa dipencet */
-  user-select: none; 
-  z-index: -2;   /* Tidak bisa diseleksi */
-}
-.video-background .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(58, 57, 57, 0.7); /* Ubah alpha-nya untuk atur kegelapan */
-  z-index: -1;
-}
-.video-background .content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding-top: 30vh;
-}
-
 
 #hero-section .btn-get-started {
     text-transform: uppercase;
