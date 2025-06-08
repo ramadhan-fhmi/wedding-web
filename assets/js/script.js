@@ -148,7 +148,7 @@ function mulai() {
 }
 
 var isPlaying = true;
-var music = new Audio('assets/audio/ketika-cinta-bertasbih.mp3');  // Ganti dengan path file musik Anda
+var music = new Audio('assets/audio/yungkai-blue.mp3');  // Ganti dengan path file musik Anda
 
 function toggleMusic(event) {
     event.preventDefault();
